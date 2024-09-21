@@ -5,11 +5,13 @@ const Getuser = () => {
   const [username, setusername] = useState("mohammed-rizwan");
   const [userdata, setuserdata] = useState("mohammed-rizwan");
   async function fetchdata() {
-    const res = await fetch(`https://api.github.com/users/${username}`).then(
-      (res) => {
+    const res = await fetch(`https://api.github.com/users/${username}`)
+      .then((res) => {
         return res.json();
-      }
-    );
+      })
+      .catch((err) => {
+        return err;
+      });
     console.log(res);
     setuserdata(res);
   }

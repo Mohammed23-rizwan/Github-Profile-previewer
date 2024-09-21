@@ -10,7 +10,7 @@ const userdata = ({ userdata }) => {
             alt=""
           />
           <div className="name">
-            <h2>{userdata.login}</h2>
+            <h2>{userdata.login ? userdata.login : userdata.message}</h2>
             <a href={userdata.html_url}>{userdata.html_url}</a>
           </div>
         </div>
